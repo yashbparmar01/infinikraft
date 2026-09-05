@@ -947,8 +947,10 @@ li,
   background-color: var(--at-neutral-0);
   width: 100%;
   margin: auto;
-  text-align: left;
+  text-align: center;
   display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
   max-width: 100%;
 }
 .box-count.box-count-square .deals-countdown .countdown-section {
@@ -956,8 +958,11 @@ li,
   text-align: center;
   line-height: 12px;
   position: relative;
-  margin: 0px 16px 0px 0px;
+  margin: 0px 8px 0px 8px;
   width: auto;
+}
+.box-count.box-count-square .deals-countdown .countdown-section:last-child {
+  margin-right: 8px;
 }
 .box-count.box-count-square .deals-countdown .countdown-section .countdown-period {
   color: var(--at-neutral-900);
@@ -37525,6 +37530,16 @@ body.at-magic-cursor #magic-cursor {
 [data-bs-theme=dark] .at-offcanvas-logo img {
   filter: invert(1);
 }
+[data-bs-theme=dark] img[src*="favicon-dark"],
+[data-bs-theme=dark] img[src*="favicon-Home"],
+[data-bs-theme=dark] .at-header-logo img[src*="favicon-dark"],
+[data-bs-theme=dark] .at-header-logo img[src*="favicon-Home"],
+[data-bs-theme=dark] .at-offcanvas-logo img[src*="favicon-dark"],
+[data-bs-theme=dark] .at-offcanvas-logo img[src*="favicon-Home"],
+[data-bs-theme=dark] .dark-mode-invert[src*="favicon-dark"],
+[data-bs-theme=dark] .dark-mode-invert[src*="favicon-Home"] {
+  filter: none !important;
+}
 [data-bs-theme=dark] .invert-0 {
   filter: invert(0) !important;
 }
@@ -37588,4 +37603,39 @@ body.at-magic-cursor #magic-cursor {
   transition-delay: 200ms;
   transform: scale(1) rotate(360deg);
 }
+
+/* Magic Cursor - Brand Orange */
+#magic-cursor.cursor-brand-orange #ball {
+  background-color: var(--at-theme-primary, #F0460E) !important;
+  mix-blend-mode: normal !important;
+  box-shadow: 0 0 25px rgba(240, 70, 14, 0.7) !important;
+}
+
+/* Countdown Numbers - Only Digits in Brand Color on Hover, No Border/Shadow/Animation */
+.box-count.box-count-square .deals-countdown .countdown-section {
+  cursor: pointer;
+}
+
+.box-count.box-count-square .deals-countdown .countdown-amount {
+  transition: color 0.25s ease;
+  cursor: pointer;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.box-count.box-count-square .deals-countdown .countdown-section:hover .countdown-amount,
+.box-count.box-count-square .deals-countdown .countdown-amount:hover {
+  color: var(--at-theme-primary, #F0460E) !important;
+  border: none !important;
+  box-shadow: none !important;
+  transform: none !important;
+}
+
+.box-count.box-count-square .deals-countdown .countdown-section .countdown-period,
+.box-count.box-count-square .deals-countdown .countdown-section:hover .countdown-period {
+  color: #ffffff !important;
+  transform: none !important;
+}
+
 /*# sourceMappingURL=main.css.map */

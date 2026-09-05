@@ -149,6 +149,40 @@
             myFunction('#FFF')
         }
 
+        // Orange Brand Cursor on Countdown Numbers
+        var orangeHoverSelector = ".box-count-square, .box-count-square *, .deals-countdown, .deals-countdown *";
+
+        $(document).on("mouseenter", orangeHoverSelector, function () {
+            if ($ball.length) {
+                $("#magic-cursor").addClass("cursor-brand-orange");
+                gsap.to($ball, {
+                    duration: 0.3,
+                    scale: 2.2,
+                    backgroundColor: "#F0460E",
+                    opacity: 0.95,
+                    borderWidth: 0,
+                    ease: "power2.out"
+                });
+            }
+        }).on("mouseleave", orangeHoverSelector, function (e) {
+            var toElement = e.relatedTarget;
+            if (toElement && $(toElement).closest(orangeHoverSelector).length) {
+                return;
+            }
+            if ($ball.length) {
+                $("#magic-cursor").removeClass("cursor-brand-orange");
+                gsap.to($ball, {
+                    duration: 0.3,
+                    scale: $ballScale,
+                    borderWidth: $ballBorderWidth,
+                    opacity: $ballOpacity,
+                    backgroundColor: "",
+                    clearProps: "backgroundColor",
+                    ease: "power2.out"
+                });
+            }
+        });
+
         // Show/hide magic cursor // 
 
         // Hide on hover//
